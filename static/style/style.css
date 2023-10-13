@@ -1,0 +1,192 @@
+/* Header styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    font-family: Dan Sans, sans-serif;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-list, .topbar-info {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.social-list li, .topbar-info li {
+    margin: 0 10px;
+}
+
+.social-list a, .topbar-info a {
+    color: #00aaff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-list a:hover, .topbar-info a:hover {
+    color: #0077aa;
+}
+
+/* Main Navigation styling */
+#DIV_10 {
+    background-color: #444;
+}
+
+#NAV_11 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#DIV_6 {
+    flex-grow: 1;
+}
+
+#DIV_6 a {
+    display: block;
+}
+
+#IMG_8 {
+    max-height: 95px;
+    margin-left: 36px;
+    display: block;
+}
+
+#UL_12 {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#UL_12 > li {
+    position: relative;
+    margin: 0 15px;
+}
+
+#UL_12 a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+#UL_12 a:hover {
+    background-color: #555;
+}
+
+/* Dropdown Menu */
+#UL_19 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #555;
+    z-index: 10;
+    border: 1px solid #444;
+    list-style-type: none;
+    border-radius: 5px; /* Rounded corners */
+    min-width: 250px; /* Ensuring the dropdown is wide enough */
+}
+
+#UL_12 > li:hover #UL_19 {
+    display: block;
+}
+
+#UL_19 li a {
+    padding: 5px 15px;
+    white-space: nowrap;
+}
+
+/* Call to Action */
+#DIV_42 {
+    margin-left: 20px;
+}
+
+#A_46 {
+    padding: 10px 20px;
+    background-color: #0077aa;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-right: 20px;
+}
+
+#A_46:hover {
+    background-color: #005588;
+}
+
+
+/* ... Existing CSS ... */
+
+/* Styles for the hamburger menu */
+.hamburger {
+    display: none;
+    background-color: #444;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .header-topbar {
+        display: none; /* hides the header */
+    }
+
+    /* .hamburger {
+        display: block;
+    } */
+
+    #NAV_11 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #UL_12 {
+        display: none; /* hides the navigation links by default */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #UL_12 > li {
+        margin: 0;
+    }
+
+    #UL_12 a {
+        padding: 10px 20px;
+        border-top: 1px solid #555;
+    }
+
+    /* For dropdown inside the navigation */
+    #UL_19 {
+        position: static;
+        border: none;
+        background-color: #666;
+        width: 100%;
+    }
+
+    #UL_12 > li:hover #UL_19 {
+        display: none; /* No hover effect on smaller screens */
+    }
+
+    #UL_19 li a {
+        padding: 5px 20px;
+    }
+}
