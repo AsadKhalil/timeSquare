@@ -8,7 +8,7 @@
     justify-content: space-between;
 }
 
-.footer-content {
+.footer-content {   
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -23,6 +23,7 @@
     max-width: 150px;
     height: auto;
     margin-bottom: 10px;
+    margin-left: -21px;
 }
 
 .footer-social a {
