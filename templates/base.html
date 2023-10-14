@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Common head section content -->
     <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{% static 'images/title.png' %}">
    
     <link rel="stylesheet" href="{% static 'style/style.css' %}" />
     <link rel="stylesheet" href="{% static 'style/footer.css' %}" />
@@ -78,7 +79,7 @@
           <nav id="NAV_11">
               <!-- Logo section -->
               <div id="DIV_6">
-                  <a href="#" id="A_7">
+                  <a href="{% url 'home' %}" id="A_7">
                       <img src="{% static 'images/finallogo.png' %}" alt="Quality Resourcing Group LLC" id="IMG_8" />
                   </a>
               </div>
