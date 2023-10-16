@@ -27,14 +27,26 @@
     {% block style %}{% endblock %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-      $(document).ready(function() {
 
-          $(window).resize(function() {
-            if ($(window).width() > 768) {
-              $('#UL_12').css('display', 'flex');
-            }
-          });
-      });
+  document.addEventListener("DOMContentLoaded", function() {
+    // If you haven't already included jQuery, add this before your script:
+    const hamburger = document.getElementById('hamburger_id');
+    
+    const navLinks = document.getElementById('UL_12');
+    const call = document.getElementById('A_46');
+    hamburger.addEventListener('click', function () {
+
+      if (navLinks.style.display === 'block') {
+        navLinks.style.display = 'none';
+        call.style.display = 'none';
+      } else {
+        navLinks.style.display = 'block';
+        call.style.display = 'block';
+      }
+    });
+
+});
+  
     </script>
   </head>
   <body>
@@ -71,14 +83,18 @@
     <div id="DIV_1">
       <!-- Main Navigation Bar -->
       <div id="DIV_10">
-          <button class="hamburger">&#9776; Menu</button>
+         
 
           <nav id="NAV_11">
               <!-- Logo section -->
+             
               <div id="DIV_6">
                   <a href="{% url 'home' %}" id="A_7">
                       <img src="{% static 'images/finallogo.png' %}" alt="Time Square LLC" id="IMG_8" />
                   </a>
+
+                  <button class="hamburger" id="hamburger_id">&#9776;</button>
+                  <!-- <button class="close-menu" id="close_menu_id">X</button> -->
               </div>
   
               <ul id="UL_12">
@@ -197,8 +213,7 @@
   </body>
 
   {% block script %}
-  // If you haven't already included jQuery, add this before your script:
-
 
   {% endblock %}
+
 </html>

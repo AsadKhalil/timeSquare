@@ -10,7 +10,7 @@
 /*----------------------------------------------------------------*/
 /*----------------------Video Section--------------------------*/
 
-
+/* 
 body, html {
     margin: 0;
     padding: 0;
@@ -47,37 +47,25 @@ video {
     color: white;
 }
 
+
 h1 {
     font-size: 2.5em;
     margin-bottom: 0.5em;
+
 }
 
 p {
     font-size: 1.2em;
     margin-bottom: 1em;
+
 }
 
-.cta-button {
-    margin: 32px;
-    display: inline-block;
-    background-color: #0077aa;
-    padding: 10px 20px;
-    border-radius: 20px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
 
-.cta-button:hover {
-    background-color: #005588;
-}
-
-#DIV_42 {
+#DIV_43 {
     margin-left: 20px;
 }
 
-#A_46 {
+#A_47 {
     padding: 10px 20px;
     background-color: #0077aa;
     color: #fff;
@@ -85,11 +73,127 @@ p {
     border-radius: 5px;
     transition: background-color 0.3s;
     margin-right: 20px;
+    position: relative;
 }
 
-#A_46:hover {
+#A_47:hover {
     background-color: #005588;
 }
+#A_47::after {  
+    content: "→";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 0.3em;
+    }
+
+    .overlay-content p {
+        font-size: 0.9em;
+        margin-bottom: 0.6em;
+    }
+
+    #A_47 {
+        padding: 8px 16px;
+        font-size: 0.8em;
+    }
+
+    .brand-logos {
+        margin-top: 20px;
+        font-size: 0.8em;
+    }
+} */
+
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;  /* adjust based on your requirement */
+}
+
+.bg-video {
+    /* width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; */
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+.overlay-content {
+    /* position: relative;
+    z-index: 2;
+    color: #bb0d0d;  
+    text-align: center;
+    padding-top: 30vh;  adjust this value to vertically center the text */
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    color: white;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.service-links {
+    list-style: none;
+    padding: 0;
+}
+
+.service-links li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #005588;  /* adjust the button color as needed */
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+.cta-button::after {
+
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #005588;  /* adjust the button color as needed */
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+}
+.partners {
+    /* Add any styling for partner logos here */
+}
+
 
 /*----------------------------------------------------------------*/
 /*----------------------Services Section--------------------------*/
@@ -130,6 +234,7 @@ h2 span::after {
 
 .service {
     flex-basis: calc(25% - 20px);
+    /* flex-basis: calc(33.33% - 20px); */
     margin-bottom: 30px;
     transition: transform 0.3s ease;
     box-sizing: border-box;
@@ -155,7 +260,11 @@ h3 {
     margin: 10px 0;
     font-size: 18px;
 }
-
+@media (max-width: 768px) {
+    .service {
+        flex-basis: calc(50% - -328px);
+    }
+}
 
 /*----------------------------------------------------------------*/
 /*----------------------Contact Section--------------------------*/
@@ -215,9 +324,9 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+/* button:hover {
     background-color: #2980b9;
-}
+} */
 
 </style>
 {% endblock %}
@@ -225,21 +334,42 @@ button:hover {
 
 {% block content %}
 
-<div class="video-container">
+
+<section class="hero-section">
+    <video autoplay muted loop playsinline>
+        <source src="{%static 'images/finalVideo.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="overlay-content">
+        <h1>We Engineer<br>Software Solutions</h1>
+        <!-- <ul class="service-links">
+            <li><a href="https://tkxel.com/enterprise">Enterprises</a></li>
+            <li><a href="https://tkxel.com/growth-companies">Growth Companies</a></li>
+            <li><a href="https://tkxel.com/startups">Startups</a></li>
+        </ul> -->
+        <a class="cta-button" href="#contact">Tell us about your project</a>
+    </div>
+    <div class="partners">
+        <!-- Include logos here -->
+    </div>
+</section>
+
+
+<!-- <div class="video-container">
     <video autoplay muted loop playsinline>
         <source src="{%static 'images/finalVideo.mp4' %}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="overlay-content">
         <h1><strong>We Engineer Software Solutions</strong> </h1>
-        <!-- <p>Enterprises • Growth Companies • Startups</p> -->
+        <!-- <p>Enterprises • Growth Companies • Startups</p> 
 
-        <div id="DIV_42">
-            <a href="#contact" id="A_46">Tell Us About Your Project</a>
+        <div id="DIV_43">
+            <a href="#contact" id="A_47">Tell Us About Your Project</a>
         </div>
-        <!-- <a href="#contact" class="cta-button">Tell Us About Your Project</a>    -->
+
     </div>
-</div>
+</div> -->
 
 <div class="services-container">
     <h2><span>Our Services</span></h2>
@@ -270,8 +400,8 @@ button:hover {
             <p>We’ll help you in establishing a unique brand image that not only improves the website but also reaches out to potential leads with the aim to get more conversion rate.</p>
         </div>
  
-    </div>
-    <div class="services-row">
+    <!-- </div> -->
+    <!-- <div class="services-row"> -->
         <div class="service">
             <img src="{%static 'images/social-media.png'%}" alt="Web Design Icon">
             <h3>Social Media Marketing</h3>

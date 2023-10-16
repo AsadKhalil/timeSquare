@@ -136,42 +136,82 @@ header {
 /* Styles for the hamburger menu */
 .hamburger {
     display: none;
-    background-color: #444;
+    background-color: #333;
     color: #fff;
     padding: 10px 20px;
     font-size: 20px;
     border: none;
     cursor: pointer;
+    /* margin-left: 175px; */
 }
 
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
+
+
+
+
+
+@media (max-width: 820px) {
+
+    header {
+        display: none !important;
+    }
+    .close-menu {
+        display: none;
+    }
+    #IMG_8 {
+        max-height: 95px;
+        margin-left: -27px;
+        display: block;
+    }
+
     .header-topbar {
         display: none; /* hides the header */
     }
 
-    /* .hamburger {
+    .hamburger {
+        width: 100;
         display: block;
-    } */
+        order: 2; /* move the hamburger to the end of the flex container */
+        margin-left: 80px;
+    }
+
+    #A_46 {
+        display: none;
+    }
 
     #NAV_11 {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* Align the content to the center */
+        width: 100%;
+        background-color: #333; /* Add a background color */
     }
 
-    #UL_12 {
+    #DIV_6 {
+        display: flex;
+        justify-content: space-between; /* Space between logo and hamburger */
+        width: 100%;
+        padding: 0 15px; /* Add padding to ensure elements don't touch the edge */
+    }
+
+    #UL_12 {   
+        margin-top: 31px;
         display: none; /* hides the navigation links by default */
         flex-direction: column;
         width: 100%;
+        /* border: 1px solid #555; Add a border around the list */
+        /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); Add a shadow for a popup effect */
     }
 
     #UL_12 > li {
         margin: 0;
+        border: none; /* Remove individual borders */
     }
 
     #UL_12 a {
-        padding: 10px 20px;
-        border-top: 1px solid #555;
+        padding: 15px 30px; /* Increase padding for each link */
+        border: none; /* Remove individual borders */
+        display: block; /* Make the links block elements */
+        text-align: center; /* Center align text */
     }
 
     /* For dropdown inside the navigation */
@@ -187,6 +227,26 @@ header {
     }
 
     #UL_19 li a {
-        padding: 5px 20px;
+        padding: 10px 20px;
+        display: block; /* Make the dropdown links block elements */
+        text-align: left; /* Left align dropdown text */
     }
+
+
+    #A_46 {
+        padding: 10px 20px;
+        background-color: #0077aa;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 27px;
+        transition: background-color 0.3s;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    #A_46:hover {
+        background-color: #005588;
+    }
+
+
 }
