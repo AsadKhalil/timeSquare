@@ -46,7 +46,8 @@
     });
 
 });
-  
+
+
     </script>
   </head>
   <body>
@@ -59,16 +60,16 @@
             <!-- Header Topbar Menus -->
             <!-- social icons -->
             <ul class="social-list">
-              <li><a href="#" target="_self"><i class="fab fa-facebook-f"></i></a> </li>
-              <li><a href="#" target="_self"><i class="fab fa-linkedin-in"></i></a> </li>
-              <li><a href="#" target="_self"><i class="fab fa-instagram"></i></a> </li>
+              <li><a href="#" target="_self" id="link"><i class="fab fa-facebook-f"></i></a> </li>
+              <li><a href="#" target="_self" id="link"><i class="fab fa-linkedin-in"></i></a> </li>
+              <li><a href="#" target="_self" id="link"><i class="fab fa-instagram"></i></a> </li>
             </ul>
             <!-- social icons close -->
             <!-- contact info -->
             <ul class="topbar-info clearfix">
               <li> <i class="fas fa-map-marker-alt"></i> United Kingdom | United States of America | United Arab Emirates | Australia </li>
-              <li> <i class="fas fa-envelope"></i> <a href="mailto:#">info@mywebsite.com</a> </li>
-              <li> <i class="fas fa-phone"></i> <a href="tel:(571) 370 3422">(571) 370 3422</a> </li>
+              <li> <i class="fas fa-envelope"></i> <a href="mailto:#" id="link">info@mywebsite.com</a> </li>
+              <li> <i class="fas fa-phone"></i> <a href="tel:(571) 370 3422" id="link">(571) 370 3422</a> </li>
             </ul>
             <!-- contact info close -->
           </div>
@@ -166,9 +167,9 @@
                 <p>Time Square Group LLC is a progressive and insightful digital agency, technically and creatively skilled to translate your brand into its best digital self.</p>
             </div>
             <div class="footer-social">
-              <a href="#" target="_self"><i class="fab fa-facebook-f"></i></a> 
-              <a href="#" target="_self"><i class="fab fa-linkedin-in"></i></a> 
-              <a href="#" target="_self"><i class="fab fa-instagram"></i></a> 
+              <a href="#" target="_self" id="link"><i class="fab fa-facebook-f"></i></a> 
+              <a href="#" target="_self" id="link"><i class="fab fa-linkedin-in"></i></a> 
+              <a href="#" target="_self" id="link"><i class="fab fa-instagram"></i></a> 
 
             </div>
           
@@ -188,19 +189,19 @@
           <div class="footer-column footer-services">
               <h5>Services</h5>
               <ul>
-                  <li><a href="{% url 'content-marketing' %}">Content Marketing</a></li>
-                  <li><a href="{% url 'app-development' %}">App Development</a></li>
-                  <li><a href="{% url 'seo-services' %}">Search Engine Optimization</a></li>
-                  <li><a href="{% url 'ppc-management' %}">PPC Management</a></li>
-                  <li><a href="{% url 'social-media-marketing' %}">Social Media Marketing</a></li>
-                  <li><a href="{% url 'web-development' %}">Website Design & Development</a></li>
+                  <li><a href="{% url 'content-marketing' %}" id="link">Content Marketing</a></li>
+                  <li><a href="{% url 'app-development' %}" id="link">App Development</a></li>
+                  <li><a href="{% url 'seo-services' %}" id="link">Search Engine Optimization</a></li>
+                  <li><a href="{% url 'ppc-management' %}" id="link">PPC Management</a></li>
+                  <li><a href="{% url 'social-media-marketing' %}" id="link">Social Media Marketing</a></li>
+                  <li><a href="{% url 'web-development' %}" id="link">Website Design & Development</a></li>
               </ul>
           </div>
           <!-- Contact details -->
           <div class="footer-column footer-contact">
               <h5>Contact Details</h5>
-              <div><a href="mailto:info@qualityresourcellc.com">info@mywebsite.com</a></div>
-              <div><a href="tel:(571)%20370%203422">(571) 370 3422</a></div>
+              <div><a href="mailto:info@qualityresourcellc.com" id="link">info@mywebsite.com</a></div>
+              <div><a href="tel:(571)%20370%203422" id="link">(571) 370 3422</a></div>
           </div>
       </div>
       <!-- Footer bottom with copyrights -->

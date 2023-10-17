@@ -55,12 +55,12 @@
     width: 100%;
 }
 
-a {
+#link {
     color: #00aaff;
     text-decoration: none;
 }
 
-a:hover {
+#link:hover {
     text-decoration: underline;
 }
 
