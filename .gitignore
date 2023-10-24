@@ -5,7 +5,7 @@ mywebsite/__pycache__/*
 mywebsite/app/__pycache__/*
 # C extensions
 *.so
-
+staticfiles/
 db.sqlite3
 # Distribution / packaging
 .Python
