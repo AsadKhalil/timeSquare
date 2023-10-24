@@ -1,7 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
+mywebsite/__pycache__/*
+mywebsite/app/__pycache__/*
 # C extensions
 *.so
 
