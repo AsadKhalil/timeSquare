@@ -46,6 +46,7 @@ coverage.xml
 .venv/
 # .env
 .env
+venv/
 website/
 
 # Developers

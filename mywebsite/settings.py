@@ -25,10 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-49fzy!os3=ueo!ga_-pbhhd4b$j&f)0-@s3e*d607(8g_8qdbi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['timesquarellc.com','www.timesquarellc.com']
 
 # Application definition
 
