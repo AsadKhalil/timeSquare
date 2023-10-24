@@ -199,11 +199,11 @@ h1 {
 /*----------------------Services Section--------------------------*/
 
 .services-container {
-    /* max-width: 1200px; */
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     padding: 50px 0;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
 }
 
 h2 {
@@ -265,6 +265,88 @@ h3 {
         flex-basis: calc(50% - -328px);
     }
 }
+/*----------------------------------------------------------------*/
+/*----------------------Vision Section--------------------------*/
+
+#mainSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #ffffff;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; 
+}
+
+.vision-header {
+    flex: 1 0 100%;
+    margin-bottom: 40px;
+}
+
+.vision-header h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.vision-header p {
+    font-size: 20px;
+    color: #333;
+}
+
+.card {
+    width: 48%;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid #333; /* Add color accent */
+}
+
+.card h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+    margin: 20px 0;
+}
+
+.card a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #0077AA;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.card a:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    #mainSection {
+        padding: 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
 
 /*----------------------------------------------------------------*/
 /*----------------------Contact Section--------------------------*/
@@ -355,21 +437,7 @@ button {
 </section>
 
 
-<!-- <div class="video-container">
-    <video autoplay muted loop playsinline>
-        <source src="{%static 'images/finalVideo.mp4' %}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="overlay-content">
-        <h1><strong>We Engineer Software Solutions</strong> </h1>
-        <!-- <p>Enterprises • Growth Companies • Startups</p> 
 
-        <div id="DIV_43">
-            <a href="#contact" id="A_47">Tell Us About Your Project</a>
-        </div>
-
-    </div>
-</div> -->
 
 <div class="services-container">
     <h2><span>Our Services</span></h2>
@@ -396,7 +464,7 @@ button {
 
         <div class="service">
             <img src="{%static 'images/security.png'%}" alt="Web Design Icon">
-            <h3>Cyber Security</h3>
+            <a href="{% url 'cyber-security' %}"><h3>Cyber Security</h3></a>
             <p>We’ll help you in establishing a unique brand image that not only improves the website but also reaches out to potential leads with the aim to get more conversion rate.</p>
         </div>
  
@@ -411,7 +479,7 @@ button {
 
         <div class="service">
             <img src="{%static 'images/ppc.png'%}" alt="Web Design Icon">
-            <h3>PPC Advertising</h3>
+            <h3>Lead Generation</h3>
             <p>Market your business on multiple platforms and improve brand visibility with the help of PPC advertising.</p>
         </div>
  
@@ -433,17 +501,55 @@ button {
 
 
 
+<section id="mainSection">
+    <div class="vision-header">
+
+        <h2 style="font-size: 51px;">What Suits Your Vision?</h2>
+        <p>Empower your business with our tailored team engagement models.</p>
+    </div>
+    <div class="card">
+        <img src="{% static 'images/vision1-min.jpg'%}" alt="home">
+        <h4 style="margin-top: 29px">Build Your<br>Dedicated Teams</h4>
+        <p>Build a dream team to work exclusively on your project, well-aligned with your timeline and goals.</p>
+        <a href="#">Build Your Team</a>
+    </div>
+    <div class="card">
+        <img src="{% static 'images/vision2-min.jpg'%}" alt="home">
+        <h4 style="margin-top: 29px">Fixed Price<br>Projects</h4>
+        <p>Reduce your time-to-market with our fully managed and cost-efficent project delivery.</p>
+        <a href="#">Develop Your Project</a>
+    </div>
+</section>
+
+
+
+
+
+
 <section id="contact">
     <div class="form-container">
         <h2>Ready To Get Started?</h2>
         
-        <form action="#" method="post">
+        <form action="/submit_contact_form/" method="post">
+            {% csrf_token %}
             <div class="form-group">
                 <select name="help">
                     <option value="" disabled selected>How can we help you?</option>
                     <!-- Example options -->
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
+                    <option value="Applying For Job">Applying For Job</option>
+                    <option value="Mobile App Development">Mobile App Development</option>
+                    <option value="Enterprise Software Development">Enterprise Software Development</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Dedicated Teams">Dedicated Teams</option>
+                    <option value="IT Consulting">IT Consulting</option>
+                    <option value="Internet of Things">Internet of Things</option>
+                    <option value="Blockchain">Blockchain</option>
+                    <option value="Augmented Reality">Augmented Reality</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                    <option value="FinTech">FinTech</option>
+                    <option value="Other">Other</option>
+
                 </select>
             </div>
             
@@ -461,10 +567,10 @@ button {
                 <textarea name="description" placeholder="Project Description"></textarea>
             </div>
             
-            <div class="form-group checkbox-group">
+            <!-- <div class="form-group checkbox-group">
                 <input type="checkbox" id="subscribe" name="subscribe">
                 <label for="subscribe">Check here to subscribe for updates.</label>
-            </div>
+            </div> -->
             
             <div class="form-group">
                 <button type="submit">Send</button>

@@ -3,17 +3,409 @@
 {% block title %}Time Square -About{% endblock %}
 
 {% block style %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+<style>
 
+/*----------------------------------------------------------------*/
+/*----------------------MAIN Section--------------------------*/
+/* Basic styling */
+.experience-section {
+    
+    height: 541px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #535252;
+
+    color: #fff;
+    text-align: center;
+}
+
+.experience-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.experience-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+.contact-btn {
+    display: inline-block;
+    background-color: #0077aa;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #ddd;
+}
+
+
+
+/* Responsiveness with media query for smaller screens */
+@media (max-width: 600px) {
+    .experience-section h1 {
+        font-size: 2rem;
+    }
+
+    .experience-section p {
+        font-size: 1rem;
+    }
+}
+
+/*----------------------------------------------------------------*/
+/*----------------------Contact Section--------------------------*/
+.problems-section {
+    font-family: Arial, sans-serif;
+    /* height: 541px; */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-container h2 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.header-container span {
+    color: #007BFF;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 0 0 calc(33.333% - 20px);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        flex: 0 0 100%;
+    }
+}
+/*----------------------------------------------------------------
+-------------------CHOOSE US---------------------------------------------*/
+
+.content-section {
+    max-width: 1200px;
+    
+    /* background-color: #f7f7f7; */
+    margin: 0 auto;
+    padding: 1rem;
+    margin-bottom: 20px;
+}
+
+.introduction {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.blurb-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.blurb {
+    flex: 0 1 calc(33.333% - 20px);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.blurb img {
+    width: 60px;
+    height: 60px;
+}
+
+@media (max-width: 768px) {
+    .blurb {
+        flex: 0 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .blurb {
+        flex: 0 1 100%;
+    }
+}
+
+
+/*----------------------------------------------------------------*/
+/*----------------------Contact Section--------------------------*/
+.form-container {
+    font-family: Arial, sans-serif;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 15px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+.checkbox-group {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-right: 10px;
+}
+
+button {
+    width: 100%; /* Making the button take full width */
+    padding: 20px 25px; /* Increase padding to make it larger */
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50px; /* Giving it large rounded edges */
+    font-size: 1.2rem; /* Making the font a bit larger */
+    transition: background-color 0.3s;
+}
+
+</style>
 {% endblock %}
 
 
 {% block content %}
+<section class="experience-section">
+    <h1>Experience excellence with us!</h1>
+    <p>TimeSquare LLC is the go-to partner for numerous global enterprises, SMEs, and tech innovators to maximize their business value.</p>
+    <a href="{% url 'contact' %}" class="contact-btn">Contact Us</a>
+</section>
 
 
+<section class="problems-section">
+    <div class="problems-section-container">
+        <div class="header-container">
+            <h2>Problems We'll Help You <span>Solve</span></h2>
+        </div>
+        <div class="content-container">
+            <div class="card">
+                <img alt="Accelerate Digital Transformation" src="{% static 'images/accelerate.svg' %}" />
+                <h4>Accelerate digital transformation</h4>
+                <p>We can help you meet evolving requirements by leveraging agile and innovative technologies scalable, and tailored to your needs.</p>
+            </div>
+            <div class="card">
+                <img alt="Build Your Dream Team" src="{% static 'images/dream-team.svg' %}" />
+                <h4>Build your dream team</h4>
+                <p>With a team of software experts, we customize our core services to meet your business needs.</p>
+            </div>
+            <div class="card">
+                <img alt="Optimize Your Digital Ecosystem" src="{% static 'images/optimize-ecosystem.svg' %}" />
+                <h4>Optimize your digital ecosystem</h4>
+                <p>By optimizing and unifying your digital ecosystem, we help you facilitate ongoing growth and ensure long-term scalability.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="content-section">
+    <article class="introduction">
+        <h2>Experience the Difference Time Square LLC Will Make for Your Business</h2>
+        <p>We value building productive, prosperous relationships with our clients that can span decades. Collaboration is our core competency, as we listen first to your needs, then speak from our expertise and experience. Our team of expert technologists offers you ingenuity, accessibility and accountability from the frontline to the highest ranks.</p>
+    </article>
+
+    <section class="blurb-section">
+
+        <div class="blurb">
+            <img src="{% static 'images/Decades-of-Experience.svg'%}" alt="Customer Experience Excellence Icon">
+            <h5>Decades of
+                Experience</h5>
+        </div>    
+        <div class="blurb">
+            <img src="{% static 'images/Customer-Experience-Exellence.svg'%}" alt="Customer Experience Excellence Icon">
+            <h5>Customer Experience Excellence</h5>
+        </div>     
+        <div class="blurb">
+            <img src="{% static 'images/Innovation-Driven.svg'%}" alt="Customer Experience Excellence Icon">
+            <h5>Innovation
+                Driven</h5>
+        </div>
+
+
+        <div class="blurb">
+            <img src="{% static 'images/Global-Delivery-Model.svg'%}" alt="Customer Experience Excellence Icon">
+            <h5>Global
+                Delivery Model</h5>
+        </div>
+
+        <div class="blurb">
+            <img src="{% static 'images/Industry-Foresight-1.svg'%}" alt="Customer Experience Excellence Icon">
+            <h5>Industry
+                Foresight</h5>
+        </div>
+        <div class="blurb">
+            <img src="{% static 'images/SSI-Framework.svg'%}" alt="Customer Experience Excellence Icon">
+            <h5>Time Square LLC
+                Framework</h5>
+        </div>
+        <div class="blurb">
+            <img src="{% static 'images/Performance-Focused.svg'%}" alt="Customer Experience Excellence Icon">
+            <h5>Performance
+                Focused</h5>
+        </div>
+        <div class="blurb">
+            <img src="{% static 'images/Dedication-To-Success.svg'%}" alt="Customer Experience Excellence Icon">
+            <h5>Dedication
+                To Success</h5>
+        </div>
+        <div class="blurb">
+            <img src="{% static 'images/Measurable-Business-Societal-Value.svg'%}" alt="Customer Experience Excellence Icon">
+            <h5>Measurable Business
+                & Societal Value</h5>
+        </div>
+        <!-- ... continue for other blurb divs ... -->
+
+    </section>
+</section>
+
+
+
+
+
+<section id="contact">
+    <div class="form-container">
+        <h2>Ready To Get Started?</h2>
+        
+        <form action="/submit_contact_form/" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <select name="help">
+                    <option value="" disabled selected>How can we help you?</option>
+                    <!-- Example options -->
+                    <option value="Applying For Job">Applying For Job</option>
+                    <option value="Mobile App Development">Mobile App Development</option>
+                    <option value="Enterprise Software Development">Enterprise Software Development</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Dedicated Teams">Dedicated Teams</option>
+                    <option value="IT Consulting">IT Consulting</option>
+                    <option value="Internet of Things">Internet of Things</option>
+                    <option value="Blockchain">Blockchain</option>
+                    <option value="Augmented Reality">Augmented Reality</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                    <option value="FinTech">FinTech</option>
+                    <option value="Other">Other</option>
+
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name">
+                <input type="email" name="email" placeholder="Your Email">
+            </div>
+            
+            <div class="form-group">
+                <input type="tel" name="phone" placeholder="(201) 555-0123" id="phone">
+                <input type="text" name="organization" placeholder="Organization">
+            </div>
+            
+            <div class="form-group">
+                <textarea name="description" placeholder="Project Description"></textarea>
+            </div>
+            
+            <!-- <div class="form-group checkbox-group">
+                <input type="checkbox" id="subscribe" name="subscribe">
+                <label for="subscribe">Check here to subscribe for updates.</label>
+            </div> -->
+            
+            <div class="form-group">
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+
+</section>
 
 {% endblock %}
-{% block script %} </script>
+{% block script %} 
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+</script>
 
 {% endblock %}

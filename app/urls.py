@@ -18,4 +18,5 @@ urlpatterns = [
     path('contact/', views.contact_view, name='contact'),
     path('terms-condition/', views.terms_view, name='terms-condition'),
     path('privacy-policy/', views.privacy_view, name='privacy-policy'),
+    path('submit_contact_form/', views.contact_form_submission, name='contact_form_submission'),
 ]

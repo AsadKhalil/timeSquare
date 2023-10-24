@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.core.mail import send_mail
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -71,3 +74,43 @@ def terms_view(request):
 def privacy_view(request):
     context = { "ASAD": "ASAD"}
     return render(request, 'privacy.html', context)
+
+
+
+
+
+@csrf_exempt
+def contact_form_submission(request):
+    if request.method == "POST":
+        help_option = request.POST.get("help")
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        organization = request.POST.get("organization")
+        description = request.POST.get("description")
+        subscribe = request.POST.get("subscribe")
+
+        # Build email content
+        email_subject = "New Contact Form Submission"
+        email_body = f"""
+            Help: {help_option}
+            Name: {name}
+            Email: {email}
+            Phone: {phone}
+            Organization: {organization}
+            Description: {description}
+            Subscribe: {'Yes' if subscribe else 'No'}
+        """
+
+        # Send the email
+        send_mail(
+            email_subject,
+            email_body,
+            'eli@timesquarellc.com',  # This is the sender's email',  # Replace with your sender's email address
+            ['eli@timesquarellc.com'],  # Replace with your email address where you want to receive the form submissions
+            fail_silently=False,
+        )
+
+        return redirect('/')
+
+    return redirect('/')
