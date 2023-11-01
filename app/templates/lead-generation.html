@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Time Square- Page Per Click{% endblock %}
+
+{% block style %}
+<style>
+
+    /*
+------------------------------------------------------------
+--------------------FAQ---------------------------------------- 
+ */
+.faq-section {
+    max-width: 890px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border: none;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #e0e0e0;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+}
+
+.faq-question .arrow {
+
+  
+    transition: transform 0.3s;
+}
+
+.faq-item.open .faq-question .arrow {
+    transform: rotate(180deg);
+}
+
+/* For small devices */
+@media (max-width: 600px) {
+    .faq-section {
+        padding: 10px;
+    }
+
+    .faq-question {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <button type="button" class="faq-question">What is web app development? <span class="arrow">&#x25BC;</span></button>
+
+       
+        <div class="faq-answer">
+            <p>Web app development is the process of creating web-based applications that run in a web browser or on a remote server.</p>
+        </div>
+    </div>
+    <!-- ... Repeat for other questions ... -->
+</section>
+
+{% endblock %}
+{% block script %} 
+
+<script>
+
+
+
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            const isOpen = answer.style.display === 'block';
+            answer.style.display = isOpen ? 'none' : 'block';
+
+            if (isOpen) {
+                item.classList.remove('open');
+            } else {
+                item.classList.add('open');
+            }
+        });
+    });
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+</script>
+
+{% endblock %}

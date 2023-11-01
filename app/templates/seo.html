@@ -3,17 +3,171 @@
 {% block title %}Time Square- Search Engine Optimization{% endblock %}
 
 {% block style %}
+<style>
+    /*
+------------------------------------------------------------
+--------------------FAQ---------------------------------------- 
+ */
+    .faq-section {
+        max-width: 890px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
+    .faq-question {
+        width: 100%;
+        text-align: left;
+        padding: 10px 15px;
+        margin: 5px 0;
+        border: none;
+        background-color: #f7f7f7;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .faq-question:hover {
+        background-color: #e0e0e0;
+    }
+
+    .faq-answer {
+        display: none;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+    }
+
+    .faq-question .arrow {
+
+ 
+        transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-question .arrow {
+        transform: rotate(180deg);
+    }
+
+    /* For small devices */
+    @media (max-width: 600px) {
+        .faq-section {
+            padding: 10px;
+        }
+
+        .faq-question {
+            font-size: 0.9em;
+            padding: 8px 12px;
+        }
+    }
+</style>
 {% endblock %}
 
 
 {% block content %}
 
 
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <button type="button" class="faq-question">What is the difference between on-page and off-page SEO?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>On-page SEO optimizes web content, while off-page SEO builds external authority through backlinks and
+                trust-building.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">What are the most important ranking factors in SEO?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Key SEO ranking factors include quality content, backlinks, user experience, and mobile-friendliness..
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">How do I choose the right keywords to target?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Choose keywords based on relevance, search volume, and competition, using keyword research tools for
+                guidance.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button type="button" class="faq-question">How can I improve my website's content for SEO?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Enhance SEO content with relevant keywords, high-quality information, readability, and engaging
+                multimedia.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">How can I build backlinks to my website?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Acquire backlinks by creating quality content, guest posting, outreach, and networking in your industry.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">How can I measure the results of my SEO efforts?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Measure SEO results through tools like Google Analytics, tracking organic traffic, keyword rankings, and
+                conversion rates.</p>
+        </div>
+    </div>
+
+</section>
 
 {% endblock %}
-{% block script %} 
+{% block script %}
+
+<script>
 
 
+
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            const isOpen = answer.style.display === 'block';
+            answer.style.display = isOpen ? 'none' : 'block';
+
+            if (isOpen) {
+                item.classList.remove('open');
+            } else {
+                item.classList.add('open');
+            }
+        });
+    });
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+</script>
 
 {% endblock %}

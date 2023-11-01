@@ -5,433 +5,445 @@
 {% block style %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
 <style>
-
-/*
+    /*
 ------------------------------------------------------------
 --------------------MAIN---------------------------------------- 
  */
-/* General styling */
-#webAppDevelopmentSection {
-    font-family: 'Arial', sans-serif; /* Using Arial as an example, replace with your preferred font */
-    padding: 20px;
-}
+    /* General styling */
+    #webAppDevelopmentSection {
+        font-family: 'Arial', sans-serif;
+        /* Using Arial as an example, replace with your preferred font */
+        padding: 20px;
+    }
 
-.contentWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.textContent {
-    flex: 1;
-    padding: 20px;
-}
-
-.subTitle {
-    /* font-size: 24px; */
-    font-size: 60px;
-    margin-bottom: 10px;
-}
-
-.mainTitle {
-    font-size: 36px;
-    margin-bottom: 15px;
-}
-
-.highlightText {
-    color: #0077AA; /* Using a sample color, you can replace it with your preferred color */
-}
-
-.description {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.ctaButton {
-    display: inline-block;
-    background-color: #0077AA; /* Sample color, replace with your preference */
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.imageContent {
-    flex: 1;
-    padding: 20px;
-}
-
-.mainImage {
-    max-width: 100%;
-    height: auto;
-}
-/* Mobile Devices */
-@media (max-width: 768px) {
     .contentWrapper {
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .textContent, .imageContent {
-        padding: 10px;
+    .textContent {
+        flex: 1;
+        padding: 20px;
     }
 
     .subTitle {
-        font-size: 20px;
+        /* font-size: 24px; */
+        font-size: 60px;
+        margin-bottom: 10px;
     }
 
     .mainTitle {
-        font-size: 28px;
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .highlightText {
+        color: #0077AA;
+        /* Using a sample color, you can replace it with your preferred color */
     }
 
     .description {
-        font-size: 16px;
-    }
-}
-
-/* Tablets and Small Devices */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .subTitle {
-        font-size: 22px;
+        font-size: 18px;
+        margin-bottom: 20px;
     }
 
-    .mainTitle {
-        font-size: 32px;
+    .ctaButton {
+        display: inline-block;
+        background-color: #0077AA;
+        /* Sample color, replace with your preference */
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
     }
 
-    .description {
-        font-size: 17px;
+    .imageContent {
+        flex: 1;
+        padding: 20px;
     }
-}
 
-/* Desktops and Large Screens */
-@media (min-width: 1025px) {
-    /* You can adjust styles for larger screens if needed */
-}
+    .mainImage {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Mobile Devices */
+    @media (max-width: 768px) {
+        .contentWrapper {
+            flex-direction: column;
+        }
+
+        .textContent,
+        .imageContent {
+            padding: 10px;
+        }
+
+        .subTitle {
+            font-size: 20px;
+        }
+
+        .mainTitle {
+            font-size: 28px;
+        }
+
+        .description {
+            font-size: 16px;
+        }
+    }
+
+    /* Tablets and Small Devices */
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .subTitle {
+            font-size: 22px;
+        }
+
+        .mainTitle {
+            font-size: 32px;
+        }
+
+        .description {
+            font-size: 17px;
+        }
+    }
+
+    /* Desktops and Large Screens */
+    @media (min-width: 1025px) {
+        /* You can adjust styles for larger screens if needed */
+    }
 
 
-/*
+    /*
 ------------------------------------------------------------
 --------------------Services---------------------------------------- 
  */
 
-.services-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
+    .services-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
 
-.services-section h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
-}
+    .services-section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
 
-.services-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-}
+    .services-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
 
-.service-item {
-    flex: 1 1 calc(33.33% - 20px);  /* Three items per row, 20px for gap */
-    box-sizing: border-box;
-    padding: 20px;
-    border: 1px solid #eee;
-    transition: box-shadow 0.3s;
-    background: #f7f7f7;
-    border-radius: 24px;
-}
-
-.service-item:hover {
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-}
-
-.service-item img {
-    width: 100px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #555;
-}
-
-@media (max-width: 768px) {
     .service-item {
-        flex: 1 1 100%;
+        flex: 1 1 calc(33.33% - 20px);
+        /* Three items per row, 20px for gap */
+        box-sizing: border-box;
+        padding: 20px;
+        border: 1px solid #eee;
+        transition: box-shadow 0.3s;
+        background: #f7f7f7;
+        border-radius: 24px;
+    }
+
+    .service-item:hover {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-item img {
+        width: 100px;
+        height: auto;
         margin-bottom: 20px;
     }
-}
 
-/*
+    .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+        background-color: #555;
+    }
+
+    @media (max-width: 768px) {
+        .service-item {
+            flex: 1 1 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    /*
 ------------------------------------------------------------
 --------------------OUR PROCESS---------------------------------------- 
  */
 
 
- .process {
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-}
-
-.process-header {
-    margin-bottom: 40px;
-}
-
-.process-header h2 {
-    font-size: 32px;
-}
-
-.process-header h2 span {
-    color: #007BFF; /* Blue color for the word 'Process' */
-}
-
-.process-header p {
-    font-size: 20px;
-    color: #555;
-    max-width: 800px;
-    margin: 10px auto;
-}
-
-.process-steps {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.step {
-    width: 30%;
-    margin: 10px 1%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.step img {
-    max-width: 100px;
-    margin: 0 auto;
-}
-
-.step h4 {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.step ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.step li {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 5px;
-}
-
-/* Responsive styles for mobile devices */
-@media (max-width: 768px) {
-    .step {
+    .process {
         width: 100%;
-        margin-bottom: 20px;
+        padding: 20px;
+        text-align: center;
     }
-}
+
+    .process-header {
+        margin-bottom: 40px;
+    }
+
+    .process-header h2 {
+        font-size: 32px;
+    }
+
+    .process-header h2 span {
+        color: #007BFF;
+        /* Blue color for the word 'Process' */
+    }
+
+    .process-header p {
+        font-size: 20px;
+        color: #555;
+        max-width: 800px;
+        margin: 10px auto;
+    }
+
+    .process-steps {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .step {
+        width: 30%;
+        margin: 10px 1%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .step img {
+        max-width: 100px;
+        margin: 0 auto;
+    }
+
+    .step h4 {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .step ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .step li {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 5px;
+    }
+
+    /* Responsive styles for mobile devices */
+    @media (max-width: 768px) {
+        .step {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
 
 
 
-/*
+    /*
 ------------------------------------------------------------
 --------------------High---------------------------------------- 
  */
 
-.web-app-section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.content {
-    flex: 1 1 60%;
-    padding: 20px;
-}
-
-.image-wrapper {
-    flex: 1 1 40%;
-    padding: 20px;
-}
-
-.image-wrapper img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-}
-
-.cta {
-    text-align: center;
-    width: 100%;
-    padding: 20px;
-}
-
-.cta a {
-    display: inline-block;
-    padding: 10px 20px;
-    border: 1px solid #333;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.cta a:hover {
-    background-color: #fff;
-    color: #333;
-}
-
-@media (max-width: 768px) {
     .web-app-section {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
     }
-    
-    .content, .image-wrapper {
-        flex: 1 1 100%;
+
+    .content {
+        flex: 1 1 60%;
+        padding: 20px;
     }
-}
+
+    .image-wrapper {
+        flex: 1 1 40%;
+        padding: 20px;
+    }
+
+    .image-wrapper img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .cta {
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .cta a {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid #333;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .cta a:hover {
+        background-color: #fff;
+        color: #333;
+    }
+
+    @media (max-width: 768px) {
+        .web-app-section {
+            flex-direction: column;
+        }
+
+        .content,
+        .image-wrapper {
+            flex: 1 1 100%;
+        }
+    }
 
 
-/*
+    /*
 ------------------------------------------------------------
 --------------------FAQ---------------------------------------- 
  */
-.faq-section {
-    max-width: 890px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.faq-question {
-    width: 100%;
-    text-align: left;
-    padding: 10px 15px;
-    margin: 5px 0;
-    border: none;
-    background-color: #f7f7f7;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.faq-question:hover {
-    background-color: #e0e0e0;
-}
-
-.faq-answer {
-    display: none;
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-}
-
-.faq-question .arrow {
-
-    margin-left: 575px;
-    transition: transform 0.3s;
-}
-
-.faq-item.open .faq-question .arrow {
-    transform: rotate(180deg);
-}
-
-/* For small devices */
-@media (max-width: 600px) {
     .faq-section {
-        padding: 10px;
+        max-width: 890px;
+        margin: 0 auto;
+        padding: 20px;
     }
 
     .faq-question {
-        font-size: 0.9em;
-        padding: 8px 12px;
+        width: 100%;
+        text-align: left;
+        padding: 10px 15px;
+        margin: 5px 0;
+        border: none;
+        background-color: #f7f7f7;
+        cursor: pointer;
+        transition: background-color 0.3s;
     }
-}
 
-/*
+    .faq-question:hover {
+        background-color: #e0e0e0;
+    }
+
+    .faq-answer {
+        display: none;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+    }
+
+    .faq-question .arrow {
+
+    
+        transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-question .arrow {
+        transform: rotate(180deg);
+    }
+
+    /* For small devices */
+    @media (max-width: 600px) {
+        .faq-section {
+            padding: 10px;
+        }
+
+        .faq-question {
+            font-size: 0.9em;
+            padding: 8px 12px;
+        }
+    }
+
+    /*
 ---------CONTACT 
  */
 
- .contact-form-container {
-    font-family: Arial, sans-serif;
-    max-width: 850px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 15px;
-}
+    .contact-form-container {
+        font-family: Arial, sans-serif;
+        max-width: 850px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #f7f7f7;
+        border-radius: 15px;
+    }
 
-.contact-header {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    text-align: center;
-}
+    .contact-header {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        text-align: center;
+    }
 
-.contact-form-group {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-}
+    .contact-form-group {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
 
-.contact-input, .contact-select, .contact-textarea, .contact-button {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    outline: none;
-}
+    .contact-input,
+    .contact-select,
+    .contact-textarea,
+    .contact-button {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        outline: none;
+    }
 
-.contact-textarea {
-    height: 100px;
-    resize: none;
-}
+    .contact-textarea {
+        height: 100px;
+        resize: none;
+    }
 
-.checkbox-group {
-    justify-content: flex-start;
-    align-items: center;
-}
+    .checkbox-group {
+        justify-content: flex-start;
+        align-items: center;
+    }
 
-.checkbox-group input {
-    width: auto;
-    margin-right: 10px;
-}
+    .checkbox-group input {
+        width: auto;
+        margin-right: 10px;
+    }
 
-.contact-button {
-    width: 100%; /* Making the button take full width */
-    padding: 20px 25px; /* Increase padding to make it larger */
-    background-color: #3498db;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 50px; /* Giving it large rounded edges */
-    font-size: 1.2rem; /* Making the font a bit larger */
-    transition: background-color 0.3s;
-}
+    .contact-button {
+        width: 100%;
+        /* Making the button take full width */
+        padding: 20px 25px;
+        /* Increase padding to make it larger */
+        background-color: #3498db;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 50px;
+        /* Giving it large rounded edges */
+        font-size: 1.2rem;
+        /* Making the font a bit larger */
+        transition: background-color 0.3s;
+    }
 
-.contact-button:hover {
-    background-color: #2980b9;
-}
-
-
+    .contact-button:hover {
+        background-color: #2980b9;
+    }
 </style>
 {% endblock %}
 
@@ -439,17 +451,19 @@
 
 
 <section id="webAppDevelopmentSection">
-	<div class="contentWrapper">
-		<div class="textContent">
-			<h2 class="subTitle">Web App Development</h2>
-			<h1 class="mainTitle">Power your business with <span class="highlightText">future ready web apps</span></h1>
-			<p class="description">We build modern, secure and scalable web applications to simplify business processes for you.</p>
-			<a href="#contact" class="ctaButton">Develop a custom web app</a>
-		</div>
-		<div class="imageContent">
-			<img alt="web-app-development-services" src="{% static '/images/web-app-banner-img.png'%}" class="mainImage" />
-		</div>
-	</div>
+    <div class="contentWrapper">
+        <div class="textContent">
+            <h2 class="subTitle">Web App Development</h2>
+            <h1 class="mainTitle">Power your business with <span class="highlightText">future ready web apps</span></h1>
+            <p class="description">We build modern, secure and scalable web applications to simplify business processes
+                for you.</p>
+            <a href="#contact" class="ctaButton">Develop a custom web app</a>
+        </div>
+        <div class="imageContent">
+            <img alt="web-app-development-services" src="{% static '/images/web-app-banner-img.png'%}"
+                class="mainImage" />
+        </div>
+    </div>
 
 </section>
 
@@ -459,14 +473,19 @@
     <div class="content">
         <h2>High-performance, fault-tolerant &amp; scalable <span>web applications.</span></h2>
         <p>We enable IT leaders to drop the ball and pick up new strategic and revenue-generating initiatives.</p>
-        <p>Time Square LLC helps you go beyond your current application landscape and embrace a dynamic, fast-paced approach to IT. By offering a full suite of web application development, modernization and management services, we can help you through each stage of your application lifecycle.</p>
-        <p>We harness the power of modern technologies to build custom and platform-based web applications for companies to digitalize their internal operations, and customer-facing services. Our web applications are highly adaptable, enabling the best user experience regardless of the size of their screen. Deployment automation allows our web development teams to deliver faster than a speeding bullet.</p>
+        <p>Time Square LLC helps you go beyond your current application landscape and embrace a dynamic, fast-paced
+            approach to IT. By offering a full suite of web application development, modernization and management
+            services, we can help you through each stage of your application lifecycle.</p>
+        <p>We harness the power of modern technologies to build custom and platform-based web applications for companies
+            to digitalize their internal operations, and customer-facing services. Our web applications are highly
+            adaptable, enabling the best user experience regardless of the size of their screen. Deployment automation
+            allows our web development teams to deliver faster than a speeding bullet.</p>
     </div>
     <div class="image-wrapper">
         <img alt="web-app-development-services" src="{% static 'images/web-app-sec-img.png'%}" />
     </div>
     <div class="cta">
-         <a href="#contact">We're ready to get started.</a>
+        <a href="#contact">We're ready to get started.</a>
     </div>
 </section>
 
@@ -476,14 +495,16 @@
     <div class="services-grid">
         <div class="service-item">
             <img alt="Experience Design" src="{% static '/images/ExperienceDesign.svg'%}">
-            <h4><strong>  Experience Design</strong></h4>
-            <p>Our extensive expertise in UI/UX design and front-end development allows us to create delightful user experiences.</p>
+            <h4><strong> Experience Design</strong></h4>
+            <p>Our extensive expertise in UI/UX design and front-end development allows us to create delightful user
+                experiences.</p>
         </div>
 
         <div class="service-item">
             <img alt="Experience Design" src="{% static '/images/FrontendDevelopment.svg'%}">
             <h4><strong>Frontend Development</strong></h4>
-            <p>We offer full-stack front-end expertise to create innovative, human-centric and goal-oriented web & mobile solutions..</p>
+            <p>We offer full-stack front-end expertise to create innovative, human-centric and goal-oriented web &
+                mobile solutions..</p>
         </div>
 
         <div class="service-item">
@@ -503,21 +524,24 @@
         <div class="service-item">
             <img alt="Experience Design" src="{% static '/images/E-Commerce-Web-Development.svg'%}">
             <h4><strong>E-Commerce Web
-                Development</strong></h4>
-            <p>Time Square LLC can build web apps for e-commerce businesses, including online stores, shopping carts, and payment gateway integration.</p>
+                    Development</strong></h4>
+            <p>Time Square LLC can build web apps for e-commerce businesses, including online stores, shopping carts,
+                and payment gateway integration.</p>
         </div>
 
 
         <div class="service-item">
             <img alt="Experience Design" src="{% static '/images/Web-App-Maintain.svg'%}">
             <h4><strong>Web App Maintenance
-                And Updates</strong></h4>
-            <p>After the launch of the app, we provide services to maintain and update the app to fix bugs, improve performance, and add new features.</p>
+                    And Updates</strong></h4>
+            <p>After the launch of the app, we provide services to maintain and update the app to fix bugs, improve
+                performance, and add new features.</p>
         </div>
         <div class="service-item">
             <img alt="Experience Design" src="{% static '/images/Web-App-Testing.svg'%}">
             <h4><strong>Web App Testing</strong></h4>
-            <p>We test web apps for bugs and other issues before it is launched in the market to ensure that it runs smoothly and is free of any issues.</p>
+            <p>We test web apps for bugs and other issues before it is launched in the market to ensure that it runs
+                smoothly and is free of any issues.</p>
         </div>
 
         <!--... repeat for other services ...-->
@@ -537,7 +561,8 @@
     </div>
     <div class="process-steps">
         <div class="step">
-            <img src="https://tkxel.com/wp-content/themes/tkxel/assets/images/web-app/Requirement-gathering.svg" alt="Requirements Gathering" />
+            <img src="https://tkxel.com/wp-content/themes/tkxel/assets/images/web-app/Requirement-gathering.svg"
+                alt="Requirements Gathering" />
             <h4>Requirements Gathering</h4>
             <ul>
                 <li>Requirements Definition</li>
@@ -547,7 +572,8 @@
             </ul>
         </div>
         <div class="step">
-            <img src="https://tkxel.com/wp-content/themes/tkxel/assets/images/web-app/Web-App-Testing.svg" alt="Development & Testing" />
+            <img src="https://tkxel.com/wp-content/themes/tkxel/assets/images/web-app/Web-App-Testing.svg"
+                alt="Development & Testing" />
             <h4>Development &amp; Testing</h4>
             <ul>
                 <li>Frontend &amp; backend development</li>
@@ -557,7 +583,8 @@
             </ul>
         </div>
         <div class="step">
-            <img src="https://tkxel.com/wp-content/themes/tkxel/assets/images/web-app/Support-Maintenance.svg" alt="Support & Maintenance" />
+            <img src="https://tkxel.com/wp-content/themes/tkxel/assets/images/web-app/Support-Maintenance.svg"
+                alt="Support & Maintenance" />
             <h4>Support &amp; Maintenance</h4>
             <ul>
                 <li>SLA Based Support</li>
@@ -575,22 +602,86 @@
 <section class="faq-section">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-item">
-        <button type="button" class="faq-question">What is web app development? <span class="arrow">&#x25BC;</span></button>
+        <button type="button" class="faq-question">What is web app development? <span
+                class="arrow">&#x25BC;</span></button>
 
-       
+
         <div class="faq-answer">
-            <p>Web app development is the process of creating web-based applications that run in a web browser or on a remote server.</p>
+            <p>Web app development is the process of creating web-based applications that run in a web browser or on a
+                remote server.</p>
         </div>
     </div>
     <!-- ... Repeat for other questions ... -->
+    <div class="faq-item">
+    <button type="button" class="faq-question">Which programming languages are essential for web development?? <span
+            class="arrow">&#x25BC;</span></button>
+
+
+    <div class="faq-answer">
+        <p>Key languages include HTML, CSS, JavaScript, and server-side languages like PHP, Python, and Ruby.</p>
+    </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">How do I choose a web hosting provider?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Consider factors like server performance, security, support, and scalability for hosting.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">What's the difference between front-end and back-end development??
+            <span class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Front-end developers work on the user interface, while back-end developers handle server-side
+                functionality.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">What's the importance of responsive web design?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Responsive design ensures websites adapt to various screen sizes and devices for a better user
+                experience.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">How do I improve website loading speed?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Optimize images, reduce code, use content delivery networks (CDNs), and leverage browser caching.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">Is WordPress a good platform for web development?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>WordPress is a popular choice for content-driven sites due to its flexibility and extensive plugin
+                support.</p>
+        </div>
+    </div>
 </section>
 
 <div class="contact-form-container">
     <h2 class="contact-header">Ready To Get Started?</h2>
-    
+
     <form action="/submit_contact_form/" method="post" class="contact-form">
         {% csrf_token %}
-        
+
         <div class="contact-form-group select-group">
             <select class="contact-select" name="help">
                 <option value="" disabled selected>How can we help you?</option>
@@ -610,26 +701,26 @@
                 <!-- Options... -->
             </select>
         </div>
-        
+
         <div class="contact-form-group input-group">
             <input class="contact-input" type="text" name="name" placeholder="Your Name">
             <input class="contact-input" type="email" name="email" placeholder="Your Email">
         </div>
-        
+
         <div class="contact-form-group input-group">
             <input class="contact-input" type="tel" name="phone" placeholder="(201) 555-0123" id="phone">
             <input class="contact-input" type="text" name="organization" placeholder="Organization">
         </div>
-        
+
         <div class="contact-form-group">
             <textarea class="contact-textarea" name="description" placeholder="Project Description"></textarea>
         </div>
-        
+
         <div class="contact-form-group checkbox-group">
             <input type="checkbox" id="subscribe" name="subscribe">
             <label for="subscribe">Check here to subscribe for updates.</label>
         </div>
-        
+
         <div class="contact-form-group">
             <button class="contact-button" type="submit">Send</button>
         </div>
@@ -641,26 +732,26 @@
 {% block script %}
 
 <script>
-    
-    
 
-const faqItems = document.querySelectorAll('.faq-item');
 
-faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
 
-    question.addEventListener('click', () => {
-        const isOpen = answer.style.display === 'block';
-        answer.style.display = isOpen ? 'none' : 'block';
-        
-        if (isOpen) {
-            item.classList.remove('open');
-        } else {
-            item.classList.add('open');
-        }
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            const isOpen = answer.style.display === 'block';
+            answer.style.display = isOpen ? 'none' : 'block';
+
+            if (isOpen) {
+                item.classList.remove('open');
+            } else {
+                item.classList.add('open');
+            }
+        });
     });
-});
 
 </script>
 
@@ -668,8 +759,8 @@ faqItems.forEach(item => {
 <script>
     const phoneInputField = document.querySelector("#phone");
     const phoneInput = window.intlTelInput(phoneInputField, {
-      utilsScript:
-        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
     });
 </script>
 {% endblock %}

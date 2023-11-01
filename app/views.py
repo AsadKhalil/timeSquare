@@ -34,9 +34,9 @@ def seo_services_view(request):
     context = { "ASAD": "ASAD"}
     return render(request, 'seo.html', context)
 
-def ppc_management_view(request):
+def lead_generation_view(request):
     context = { "ASAD": "ASAD"}
-    return render(request, 'ppc.html', context)
+    return render(request, 'lead-generation.html', context)
 
 def social_media_marketing_view(request):
     context = { "ASAD": "ASAD"}
@@ -49,6 +49,11 @@ def content_marketing_view(request):
 def cyber_security_view(request):
     context = { "ASAD": "ASAD"}
     return render(request, 'cyber.html', context)
+
+
+def data_ai_view(request):
+    context = { "ASAD": "ASAD"}
+    return render(request, 'data-ai.html', context)
 
 def careers_view(request):
     context = { "ASAD": "ASAD"}

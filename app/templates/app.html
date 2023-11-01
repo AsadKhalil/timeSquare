@@ -4,16 +4,175 @@
 
 {% block style %}
 
+<style>
+    /*
+------------------------------------------------------------
+--------------------FAQ---------------------------------------- 
+ */
+    .faq-section {
+        max-width: 890px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .faq-question {
+        width: 100%;
+        text-align: left;
+        padding: 10px 15px;
+        margin: 5px 0;
+        border: none;
+        background-color: #f7f7f7;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .faq-question:hover {
+        background-color: #e0e0e0;
+    }
+
+    .faq-answer {
+        display: none;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+    }
+
+    .faq-question .arrow {
+
+        transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-question .arrow {
+        transform: rotate(180deg);
+    }
+
+    /* For small devices */
+    @media (max-width: 600px) {
+        .faq-section {
+            padding: 10px;
+        }
+
+        .faq-question {
+            font-size: 0.9em;
+            padding: 8px 12px;
+        }
+    }
+</style>
 {% endblock %}
+
 
 
 {% block content %}
 
 
 
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">What are the different types of mobile apps?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>three primary types of mobile apps: native apps (platform-specific), web apps (accessed through a web
+                browser), and hybrid apps (a combination of native and web technologies).</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">What programming languages and tools are used for app development??
+            <span class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Common app development languages: Java, Swift, Kotlin (native); HTML, CSS, JavaScript (web); React Native
+                (hybrid).</p>
+        </div>
+    </div>
+  
+    <div class="faq-item">
+        <button type="button" class="faq-question">How do I choose the right platform for my mobile app?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Choose a platform based on your target audience; iOS for affluent markets, Android for wider reach, or
+                both for maximum coverage.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">How can I design a user-friendly mobile app?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Design with a simple and intuitive user interface, prioritize user feedback, and perform usability
+                testing for a user-friendly mobile app.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">How can I monetize my mobile app?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Monetize your mobile app through in-app ads, in-app purchases, subscriptions, or by offering a paid
+                version with additional features.</p>
+        </div>
+    </div>
+  
+    <div class="faq-item">
+        <button type="button" class="faq-question">How can I test and deploy my mobile app?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Test your app thoroughly on various devices and OS versions, then deploy it to app stores following their
+                submission guidelines.</p>
+        </div>
+    </div>
+    <!-- ... Repeat for other questions ... -->
+</section>
+
 {% endblock %}
-{% block script %} </script>
+{% block script %}
+
+<script>
 
 
+
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            const isOpen = answer.style.display === 'block';
+            answer.style.display = isOpen ? 'none' : 'block';
+
+            if (isOpen) {
+                item.classList.remove('open');
+            } else {
+                item.classList.add('open');
+            }
+        });
+    });
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+</script>
 
 {% endblock %}

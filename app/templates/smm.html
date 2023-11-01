@@ -3,17 +3,177 @@
 {% block title %}Time Square- Social Media Marketing{% endblock %}
 
 {% block style %}
+<style>
+    /*
+------------------------------------------------------------
+--------------------FAQ---------------------------------------- 
+ */
+    .faq-section {
+        max-width: 890px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
+    .faq-question {
+        width: 100%;
+        text-align: left;
+        padding: 10px 15px;
+        margin: 5px 0;
+        border: none;
+        background-color: #f7f7f7;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .faq-question:hover {
+        background-color: #e0e0e0;
+    }
+
+    .faq-answer {
+        display: none;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+    }
+
+    .faq-question .arrow {
+
+       
+        transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-question .arrow {
+        transform: rotate(180deg);
+    }
+
+    /* For small devices */
+    @media (max-width: 600px) {
+        .faq-section {
+            padding: 10px;
+        }
+
+        .faq-question {
+            font-size: 0.9em;
+            padding: 8px 12px;
+        }
+    }
+</style>
 {% endblock %}
 
 
 {% block content %}
 
 
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <button type="button" class="faq-question">What is social media marketing?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>It's the use of social platforms to promote products or services, engage with audiences, and build brand
+                awareness.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">How often should I post on social media?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Posting frequency varies by platform, but consistency and quality are more important than quantity</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">Which social media platforms should I use?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Choose platforms based on your target audience; popular ones include Facebook, Instagram, Twitter, and
+                LinkedIn.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">How can I measure the success of social media campaigns?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Metrics like engagement, click-through rates, and conversion rates help gauge campaign effectiveness.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button type="button" class="faq-question">What's the importance of social media advertising?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Paid social ads can target specific demographics, increase reach, and drive website traffic or
+                conversions.</p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <button type="button" class="faq-question">How can I manage negative comments or reviews on social media?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>Respond professionally, address concerns, and use feedback for improvement.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button type="button" class="faq-question">Is influencer marketing effective for small businesses?? <span
+                class="arrow">&#x25BC;</span></button>
+
+
+        <div class="faq-answer">
+            <p>It can be; partnering with micro-influencers can be cost-effective and build credibility.</p>
+        </div>
+    </div>
+    <!-- ... Repeat for other questions ... -->
+</section>
 
 {% endblock %}
-{% block script %} 
+{% block script %}
+
+
+<script>
 
 
 
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            const isOpen = answer.style.display === 'block';
+            answer.style.display = isOpen ? 'none' : 'block';
+
+            if (isOpen) {
+                item.classList.remove('open');
+            } else {
+                item.classList.add('open');
+            }
+        });
+    });
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+            "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+</script>
 {% endblock %}
